@@ -1,8 +1,5 @@
 PRODUCT_BRAND ?= crdroid
 
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 #ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 # determine the smaller dimension
 #TARGET_BOOTANIMATION_SIZE := $(shell \
@@ -202,18 +199,6 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
     libnamparser
-
-# These packages are excluded from user builds
-ifneq ($(TARGET_BUILD_VARIANT),user)
-
-PRODUCT_PACKAGES += \
-    procmem \
-    procrank \
-    su
-endif
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/crdroid/overlay/common
 
