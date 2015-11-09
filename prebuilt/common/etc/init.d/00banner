@@ -4,4 +4,4 @@
 #
 L="log -p i -t cm"
 
-$L "Welcome to Android `getprop ro.build.version.release` / CyanogenMod-`getprop ro.crdroid.version`";
+$L "Welcome to Android `getprop ro.build.version.release` / crDroid Android-`getprop ro.crdroid.version`";
